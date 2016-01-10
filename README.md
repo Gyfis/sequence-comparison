@@ -1,7 +1,7 @@
 # Sequence comparison
 ### A little project for comparing two biological sequences
 
-The main script of the project recieves two IDs of some biological sequences, along with a specified databases and formats, compares them to each other, and generates a pdf with contents of this comparison.
+The main script of the project recieves two IDs of some biological sequences, along with some specified databases and formats, compares them to each other, and generates a pdf with contents of this comparison.
 
 ## Example input:
 ```bash
