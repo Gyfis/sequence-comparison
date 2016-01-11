@@ -1,0 +1,3 @@
+[submodule "scoring_matrices"]
+	path = scoring_matrices
+	url = https://github.com/Gyfis/bioinf-matrices
