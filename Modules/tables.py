@@ -1,8 +1,8 @@
 __author__ = 'Gyfis'
 
 
-dna = ['A', 'C', 'G', 'T', '*']
-rna = ['A', 'C', 'G', 'U', '*']
+dna = ['A', 'C', 'G', 'T', 'N']
+rna = ['A', 'C', 'G', 'U', 'N']
 protein = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', '*']
 
 rna2prot = {
