@@ -31,6 +31,7 @@ class Databases(Enum):
 
     ebi = 3
     ebi_ena = 3.1
+    ebi_interpro = 3.2
 
     ddbj = 4
 
@@ -43,12 +44,14 @@ class Databases(Enum):
             return 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=%s&rettype=%s' % (data_id, data_format.name)
         elif self is Databases.ebi_ena or self is Databases.ebi:
             return 'http://www.ebi.ac.uk/ena/data/view/%s&display=%s' % (data_id, data_format.name)
+        elif self is Databases.ebi_interpro:
+            return 'http://www.ebi.ac.uk/interpro/protein/%s?export=%s' % (data_id, data_format.name)
         elif self is Databases.ddbj:
             return 'http://getentry.ddbj.nig.ac.jp/getentry/na/%s/?format=%s' % (data_id, data_format.name)
 
 
 def get(data_id, filename, path, data_format, database):
-    url = path + os.sep + database.url(data_id, data_format)
+    url = database.url(data_id, data_format)
     filepath = download_file(url, filename, path)
     return data_format.parse(filepath)
 

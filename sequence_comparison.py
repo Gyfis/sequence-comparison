@@ -40,7 +40,7 @@ parameters for global and local alignment search. Possibilities are
                         help='ID of the sequence A. Default is UPI0000000001.')
     parser.add_argument('sequence_b',
                         nargs='?',
-                        default='UPI0000000002',
+                        default='P10275',#'UPI0000000002',
                         help='ID of the sequence B. Default is UPI0000000002.')
 
     parser.add_argument('-sa', '--source_a',
@@ -63,7 +63,7 @@ parameters for global and local alignment search. Possibilities are
                         dest='source_b',
                         type=str,
                         metavar='',
-                        default='uniprot_uniparc',
+                        default='uniprot',
                         choices=source_parser.choices(),
                         help='name or id of the source for the sequence b')
 
