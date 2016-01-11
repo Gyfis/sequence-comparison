@@ -28,6 +28,7 @@ class Databases(Enum):
 
     ncbi = 2
     ncbi_nuccore = 2.1
+    ncbi_protein = 2.2
 
     ebi = 3
     ebi_ena = 3.1
@@ -42,6 +43,8 @@ class Databases(Enum):
             return 'http://www.uniprot.org/uniparc/' + str(data_id) + data_format.extension()
         elif self is Databases.ncbi_nuccore or self is Databases.ncbi:
             return 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=%s&rettype=%s' % (data_id, data_format.name)
+        elif self is Databases.ncbi_protein:
+            return 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&id=%s&rettype=%s' % (data_id, data_format.name)
         elif self is Databases.ebi_ena or self is Databases.ebi:
             return 'http://www.ebi.ac.uk/ena/data/view/%s&display=%s' % (data_id, data_format.name)
         elif self is Databases.ebi_interpro:
