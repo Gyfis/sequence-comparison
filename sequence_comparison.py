@@ -2,6 +2,7 @@ import logging
 import sys
 import argparse
 from argparse import RawDescriptionHelpFormatter
+import os
 
 from Modules import source_parser, alignment, bio_helpers, basic, platypus
 
@@ -165,6 +166,9 @@ parameters for global and local alignment search. Possibilities are
         logging.info('Sequence A successfully transformed from rna to dna. Continuing with the calculation.')
 
     # now we have the unified sources, so we can initialize platypus and start creating the pdf
+
+    if not os.path.isdir('pdf_out'):
+        os.mkdir('pdf_out')
 
     logging.info('////////////////////////////////////////////////////////////////////////////////////////////////////')
     logging.info('Generating histograms for sequences.')
